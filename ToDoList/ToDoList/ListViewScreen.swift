@@ -13,21 +13,14 @@ struct Item: Identifiable {
     let task: Int?
 }
 
-var listItems = [
-    Item(title: "Garden", task: 2),
-    Item(title: "1 Nov", task: 3),
-    Item(title: "Password", task: 1),
-    Item(title: "Tomorrow", task: nil),
-]
-
 struct ListViewScreen: View {
 
-    @State var appItems = listItems
+    @State var listItems: [Item] = []
     @State var isShowingAddItemScreen = false
 
     var body: some View {
         NavigationStack {
-            List(appItems) { item in
+            List(listItems) { item in
                 HStack {
                     Text(item.title)
 
@@ -52,7 +45,7 @@ struct ListViewScreen: View {
                     .sheet(isPresented: $isShowingAddItemScreen, onDismiss: {
                         print("Screen dismissed")
                     }, content: {
-                        AddItemScreen()
+                        AddItemScreen(listItems: $listItems)
                     })
                 }
             }

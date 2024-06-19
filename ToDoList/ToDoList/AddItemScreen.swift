@@ -14,6 +14,8 @@ struct AddItemScreen: View {
     @State var title: String = ""
     @State var color: Color = .clear
 
+    @Binding var listItems: [Item]
+
     var body: some View {
         NavigationStack {
             Form {
@@ -34,6 +36,7 @@ struct AddItemScreen: View {
             .toolbar {
                 ToolbarItem(id: "Done", placement: .topBarTrailing) {
                     Button("Done", role: .none) {
+                        listItems.append(Item(title: title, task: nil))
                         dismiss()
                     }
                 }
@@ -50,6 +53,6 @@ struct AddItemScreen: View {
 
 #Preview {
     NavigationStack {
-        AddItemScreen(title: "Garden", color: .clear)
+        AddItemScreen(listItems: .constant([Item(title: "Garden", task: 2)]))
     }
 }
