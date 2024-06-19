@@ -27,7 +27,24 @@ struct AddItemScreen: View {
                 }
                 
                 Section {
-                    ColorPicker("Colour", selection: $color)
+                    VStack {
+                        ColorPicker("Colour", selection: $color)
+                        HStack {
+                            ForEach([Color.red, Color.green, Color.blue, Color.orange, Color.yellow], id: \.self) { color in
+
+                                Circle()
+                                    .fill(color)
+                                    .frame(width: 44, height: 44)
+                                    .padding([.top, .bottom])
+                                    .onTapGesture {
+                                        self.color = color
+                                    }
+
+                            }
+
+                            Spacer()
+                        }
+                    }
                 } header: {
                     Text("Pick Color")
                 }
