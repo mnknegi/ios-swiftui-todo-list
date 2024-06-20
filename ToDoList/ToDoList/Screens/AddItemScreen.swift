@@ -51,7 +51,7 @@ struct AddItemScreen: View {
             }
             .navigationTitle("Add List")
             .toolbar {
-                ToolbarItem(id: "Done", placement: .topBarTrailing) {
+                ToolbarItem(id: "Done", placement: .confirmationAction) {
                     Button("Done", role: .none) {
                         listItems.append(Item(title: title, task: nil))
                         dismiss()
@@ -70,6 +70,6 @@ struct AddItemScreen: View {
 
 #Preview {
     NavigationStack {
-        AddItemScreen(listItems: .constant([Item(title: "Garden", task: 2)]))
+        AddItemScreen(listItems: .constant(mockItems))
     }
 }

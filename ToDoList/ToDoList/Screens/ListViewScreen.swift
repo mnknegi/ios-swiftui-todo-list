@@ -7,33 +7,31 @@
 
 import SwiftUI
 
-struct Item: Identifiable {
-    let id = UUID()
-    let title: String
-    let task: Int?
-}
-
 struct ListViewScreen: View {
 
-    @State var listItems: [Item] = []
+    @State var listItems: [Item] = mockItems
     @State var isShowingAddItemScreen = false
 
     var body: some View {
         NavigationStack {
             List(listItems) { item in
-                HStack {
-                    Text(item.title)
+                NavigationLink {
+                    TaskListScreen()
+                } label: {
+                    HStack {
+                        Text(item.title)
 
-                    Spacer()
+                        Spacer()
 
-                    if let task = item.task {
-                        Text("\(task)")
-                            .foregroundStyle(.gray)
+                        if let task = item.task {
+                            Text("\(task)")
+                                .foregroundStyle(.gray)
+                        }
                     }
+                    .fontWeight(.semibold)
+                    .font(.title3)
+                    .padding()
                 }
-                .fontWeight(.semibold)
-                .font(.title3)
-                .padding()
             }
             .listStyle(.plain)
             .navigationTitle("List")
