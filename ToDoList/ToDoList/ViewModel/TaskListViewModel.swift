@@ -11,7 +11,7 @@ import Observation
 @Observable
 final class TaskListViewModel {
 
-    var tasks = mockTasks
+    var tasks: [Task] = []
     var isShowingAddTaskScreen = false
     
 }

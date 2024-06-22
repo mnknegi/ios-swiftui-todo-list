@@ -11,7 +11,7 @@ import Observation
 @Observable
 final class ListViewModel {
 
-    var listItems: [Item] = mockItems
+    var listItems: [Item] = []
     var isShowingAddItemScreen = false
 
     let screenTitle = "List"
