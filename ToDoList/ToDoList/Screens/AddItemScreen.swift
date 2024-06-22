@@ -53,7 +53,7 @@ struct AddItemScreen: View {
             .toolbar {
                 ToolbarItem(id: "Done", placement: .confirmationAction) {
                     Button("Done", role: .none) {
-                        listItems.append(Item(title: title, task: nil))
+                        listItems.append(Item(title: title, task: nil, color: self.color))
                         dismiss()
                     }
                 }

@@ -11,6 +11,8 @@ struct TaskListScreen: View {
 
     @State var tasks = mockTasks
     @State var isShowingAddTaskScreen = false
+    @State var isEditingEnabled = false
+    @State var editedTaskTitle = ""
 
     var body: some View {
 
@@ -20,8 +22,28 @@ struct TaskListScreen: View {
                     ForEach($tasks) { task in
                         if !task.isCompleted.wrappedValue {
                             TaskRowView(task: task)
+                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                    Button {
+                                        isEditingEnabled = true
+                                    } label: {
+                                        Label("Edit Title", systemImage: "pencil")
+                                    }
+                                    .alert("Edit Task", isPresented: $isEditingEnabled) {
+                                        TextField("Edit Task title", text: $editedTaskTitle)
+
+                                        Button("OK", action: {
+                                            // Update the task inside DB
+                                            // get all the tasks from DB
+                                        })
+
+                                        Button("Cancel", role: .cancel, action: {})
+                                    }
+                                    .tint(.indigo)
+                            }
                         }
+                        
                     }
+                    .onDelete(perform: deleteTask)
                 }
 
                 Section {
@@ -35,7 +57,6 @@ struct TaskListScreen: View {
                         Text("Completed")
                     }
                 }
-
             }
 
             VStack {
@@ -67,6 +88,10 @@ struct TaskListScreen: View {
 
     func showCompletedHeader() -> Bool {
         !tasks.filter({ $0.isCompleted }).isEmpty
+    }
+
+    func deleteTask(at index: IndexSet) {
+        tasks.remove(atOffsets: index)
     }
 }
 

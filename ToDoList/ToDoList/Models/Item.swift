@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Item: Identifiable {
     let id = UUID()
     let title: String
     let task: Int?
+    var color: Color = .clear
 }

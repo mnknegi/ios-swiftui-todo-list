@@ -39,7 +39,9 @@ struct AddTaskScreen: View {
             .toolbar {
                 ToolbarItem(id: "Add", placement: .confirmationAction) {
                     Button("Add", role: .none) {
-                        tasks.append(Task(title: activityTitle, completionDate: date))
+                        if !activityTitle.isEmpty {
+                            tasks.append(Task(title: activityTitle, completionDate: date))
+                        }
                         dismiss()
                     }
                 }

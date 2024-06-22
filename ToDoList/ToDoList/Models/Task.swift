@@ -9,7 +9,7 @@ import Foundation
 
 struct Task: Identifiable {
     let id = UUID()
-    let title: String
+    var title: String
     var isFavourite = false
     var isCompleted = false
     var completionDate = Date()
