@@ -8,10 +8,10 @@
 import Foundation
 
 let mockItems = [
-    Item(title: "Garden", task: 2),
-    Item(title: "Grosseries", task: 4),
-    Item(title: "Fruits", task: nil),
-    Item(title: "Dishes", task: 0),
+    Item(title: "Garden", count: 2),
+    Item(title: "Grosseries", count: 4),
+    Item(title: "Fruits", count: nil),
+    Item(title: "Dishes", count: 0),
 ]
 
 let mockTasks = [

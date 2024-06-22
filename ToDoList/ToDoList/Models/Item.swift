@@ -11,6 +11,6 @@ import SwiftUI
 struct Item: Identifiable {
     let id = UUID()
     let title: String
-    let task: Int?
+    let count: Int?
     var color: Color = .clear
 }
