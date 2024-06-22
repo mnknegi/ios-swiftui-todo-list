@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Observation
 
-final class ListViewModel: ObservableObject {
+@Observable
+final class ListViewModel {
 
-    @Published var listItems: [Item] = mockItems
-    @Published var isShowingAddItemScreen = false
+    var listItems: [Item] = mockItems
+    var isShowingAddItemScreen = false
 
 }
