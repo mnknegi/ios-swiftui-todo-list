@@ -17,6 +17,12 @@
 		85949EDB2C27409100CE7DC5 /* TitleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85949EDA2C27409100CE7DC5 /* TitleSection.swift */; };
 		85949EDD2C27409800CE7DC5 /* ColorSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85949EDC2C27409800CE7DC5 /* ColorSection.swift */; };
 		85949EDF2C27416400CE7DC5 /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85949EDE2C27416400CE7DC5 /* AddItemViewModel.swift */; };
+		85949EE22C27480E00CE7DC5 /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85949EE12C27480E00CE7DC5 /* TaskRowView.swift */; };
+		85949EE42C27487C00CE7DC5 /* CompletedTasksSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85949EE32C27487C00CE7DC5 /* CompletedTasksSection.swift */; };
+		85949EE62C2748DF00CE7DC5 /* ToDoTasksSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85949EE52C2748DF00CE7DC5 /* ToDoTasksSection.swift */; };
+		85949EE82C27493000CE7DC5 /* FloatingAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85949EE72C27493000CE7DC5 /* FloatingAddButton.swift */; };
+		85949EEA2C274EA000CE7DC5 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85949EE92C274EA000CE7DC5 /* TaskListViewModel.swift */; };
+		85949EEC2C274F8F00CE7DC5 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85949EEB2C274F8F00CE7DC5 /* AddTaskViewModel.swift */; };
 		85D1CF522C21F091008275B5 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1CF512C21F091008275B5 /* ToDoListApp.swift */; };
 		85D1CF542C21F091008275B5 /* ListViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1CF532C21F091008275B5 /* ListViewScreen.swift */; };
 		85D1CF562C21F092008275B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D1CF552C21F092008275B5 /* Assets.xcassets */; };
@@ -35,6 +41,12 @@
 		85949EDA2C27409100CE7DC5 /* TitleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSection.swift; sourceTree = "<group>"; };
 		85949EDC2C27409800CE7DC5 /* ColorSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSection.swift; sourceTree = "<group>"; };
 		85949EDE2C27416400CE7DC5 /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
+		85949EE12C27480E00CE7DC5 /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+		85949EE32C27487C00CE7DC5 /* CompletedTasksSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksSection.swift; sourceTree = "<group>"; };
+		85949EE52C2748DF00CE7DC5 /* ToDoTasksSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTasksSection.swift; sourceTree = "<group>"; };
+		85949EE72C27493000CE7DC5 /* FloatingAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingAddButton.swift; sourceTree = "<group>"; };
+		85949EE92C274EA000CE7DC5 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		85949EEB2C274F8F00CE7DC5 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		85D1CF4E2C21F091008275B5 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D1CF512C21F091008275B5 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		85D1CF532C21F091008275B5 /* ListViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewScreen.swift; sourceTree = "<group>"; };
@@ -87,6 +99,8 @@
 			children = (
 				85949ED22C2730B500CE7DC5 /* ListViewModel.swift */,
 				85949EDE2C27416400CE7DC5 /* AddItemViewModel.swift */,
+				85949EE92C274EA000CE7DC5 /* TaskListViewModel.swift */,
+				85949EEB2C274F8F00CE7DC5 /* AddTaskViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -96,6 +110,7 @@
 			children = (
 				85949ED52C273E8D00CE7DC5 /* ListViewScreen */,
 				85949ED92C27407A00CE7DC5 /* AddItemScreen */,
+				85949EE02C2747ED00CE7DC5 /* TaskListScreen */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +130,17 @@
 				85949EDC2C27409800CE7DC5 /* ColorSection.swift */,
 			);
 			path = AddItemScreen;
+			sourceTree = "<group>";
+		};
+		85949EE02C2747ED00CE7DC5 /* TaskListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				85949EE12C27480E00CE7DC5 /* TaskRowView.swift */,
+				85949EE52C2748DF00CE7DC5 /* ToDoTasksSection.swift */,
+				85949EE32C27487C00CE7DC5 /* CompletedTasksSection.swift */,
+				85949EE72C27493000CE7DC5 /* FloatingAddButton.swift */,
+			);
+			path = TaskListScreen;
 			sourceTree = "<group>";
 		};
 		85D1CF452C21F091008275B5 = {
@@ -227,7 +253,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D1CF602C2202EC008275B5 /* AddItemScreen.swift in Sources */,
+				85949EE42C27487C00CE7DC5 /* CompletedTasksSection.swift in Sources */,
+				85949EE82C27493000CE7DC5 /* FloatingAddButton.swift in Sources */,
+				85949EEC2C274F8F00CE7DC5 /* AddTaskViewModel.swift in Sources */,
+				85949EE62C2748DF00CE7DC5 /* ToDoTasksSection.swift in Sources */,
 				85949EDD2C27409800CE7DC5 /* ColorSection.swift in Sources */,
+				85949EEA2C274EA000CE7DC5 /* TaskListViewModel.swift in Sources */,
 				85949EC82C233A9300CE7DC5 /* AddTaskScreen.swift in Sources */,
 				85D1CF542C21F091008275B5 /* ListViewScreen.swift in Sources */,
 				85949ED82C273EB600CE7DC5 /* ItemListRow.swift in Sources */,
@@ -236,6 +267,7 @@
 				85949EDB2C27409100CE7DC5 /* TitleSection.swift in Sources */,
 				85949ED32C2730B500CE7DC5 /* ListViewModel.swift in Sources */,
 				85949ED02C234FB700CE7DC5 /* MockData.swift in Sources */,
+				85949EE22C27480E00CE7DC5 /* TaskRowView.swift in Sources */,
 				85949ECD2C234F2C00CE7DC5 /* Task.swift in Sources */,
 				85949EDF2C27416400CE7DC5 /* AddItemViewModel.swift in Sources */,
 				85D1CF522C21F091008275B5 /* ToDoListApp.swift in Sources */,

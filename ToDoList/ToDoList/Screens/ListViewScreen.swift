@@ -15,7 +15,7 @@ struct ListViewScreen: View {
         NavigationStack {
             List(viewModel.listItems) { item in
                 NavigationLink {
-                    TaskListScreen()
+                    TaskListScreen(screenTitle: item.title)
                 } label: {
                     ItemListRow(item: item)
                 }

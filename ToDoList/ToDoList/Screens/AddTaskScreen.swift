@@ -13,41 +13,40 @@ struct AddTaskScreen: View {
 
     @Binding var tasks: [Task]
 
-    @State var activityTitle: String = ""
-    @State var date: Date = Date()
+    @State var viewModel = AddTaskViewModel()
 
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Activity Name", text: $activityTitle, prompt: Text("New Activity"))
-                DatePicker("Pick a Date", selection: $date, in: Date.now..., displayedComponents: [.date, .hourAndMinute])
+                TextField("Activity Name", text: $viewModel.activityTitle, prompt: Text("New Activity"))
+                DatePicker("Pick a Date", selection: $viewModel.date, in: Date.now..., displayedComponents: [.date, .hourAndMinute])
                 Menu("Set due date") {
                     Button("Today \((Date.now.formatted(.dateTime.weekday(.wide))))") {
-                        date = Date.now
+                        viewModel.date = Date.now
                     }
                     
                     Button("Tomorrow \((Date.now.addingTimeInterval(86400).formatted(.dateTime.weekday(.wide))))") {
-                        date = Date.now.addingTimeInterval(86400)
+                        viewModel.date = Date.now.addingTimeInterval(86400)
                     }
                     
                     Button("Next week on this day") {
-                        date = Date.now.addingTimeInterval(604800)
+                        viewModel.date = Date.now.addingTimeInterval(604800)
                     }
                 }
             }
-            .navigationTitle("Add Activity")
+            .navigationTitle(viewModel.screenTitle)
             .toolbar {
-                ToolbarItem(id: "Add", placement: .confirmationAction) {
-                    Button("Add", role: .none) {
-                        if !activityTitle.isEmpty {
-                            tasks.append(Task(title: activityTitle, completionDate: date))
+                ToolbarItem(id: viewModel.navBarAddButton, placement: .confirmationAction) {
+                    Button(viewModel.navBarAddButton, role: .none) {
+                        if !viewModel.activityTitle.isEmpty {
+                            tasks.append(Task(title: viewModel.activityTitle, completionDate: viewModel.date))
                         }
                         dismiss()
                     }
                 }
                 
-                ToolbarItem(id: "Cancel", placement: .topBarLeading) {
-                    Button("Cancel", role: .cancel) {
+                ToolbarItem(id: viewModel.navBarCancelButton, placement: .topBarLeading) {
+                    Button(viewModel.navBarCancelButton, role: .cancel) {
                         dismiss()
                     }
                 }
