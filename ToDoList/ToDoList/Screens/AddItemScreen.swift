@@ -23,17 +23,17 @@ struct AddItemScreen: View {
                 ColorSection(selectedColor: $viewModel.selectedColor)
 
             }
-            .navigationTitle("Add List")
+            .navigationTitle(viewModel.screenTitle)
             .toolbar {
-                ToolbarItem(id: "Done", placement: .confirmationAction) {
-                    Button("Done", role: .none) {
+                ToolbarItem(id: viewModel.navBarDoneButton, placement: .confirmationAction) {
+                    Button(viewModel.navBarDoneButton, role: .none) {
                         listItems.append(Item(title: viewModel.title, count: nil, color: viewModel.selectedColor))
                         dismiss()
                     }
                 }
                 
-                ToolbarItem(id: "Cancel", placement: .topBarLeading) {
-                    Button("Cancel", role: .cancel) {
+                ToolbarItem(id: viewModel.navBarCancelButton, placement: .topBarLeading) {
+                    Button(viewModel.navBarCancelButton, role: .cancel) {
                         dismiss()
                     }
                 }

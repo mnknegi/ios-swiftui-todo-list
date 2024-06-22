@@ -15,4 +15,8 @@ final class AddItemViewModel {
     var title: String = ""
     var selectedColor: Color = .clear
 
+    let screenTitle = "Add List"
+    let navBarDoneButton = "Done"
+    let navBarCancelButton = "Cancel"
+
 }

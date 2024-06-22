@@ -14,4 +14,8 @@ final class ListViewModel {
     var listItems: [Item] = mockItems
     var isShowingAddItemScreen = false
 
+    let screenTitle = "List"
+    let navBarAddButton = "Add Item"
+    let naveBarAddButtonImage = "plus"
+
 }

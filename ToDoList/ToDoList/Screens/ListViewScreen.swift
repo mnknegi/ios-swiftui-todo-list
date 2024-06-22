@@ -21,15 +21,13 @@ struct ListViewScreen: View {
                 }
             }
             .listStyle(.plain)
-            .navigationTitle("List")
+            .navigationTitle(viewModel.screenTitle)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add Item", systemImage: "plus", action: {
+                    Button(viewModel.navBarAddButton, systemImage: viewModel.naveBarAddButtonImage, action: {
                         viewModel.isShowingAddItemScreen = true
                     })
-                    .sheet(isPresented: $viewModel.isShowingAddItemScreen, onDismiss: {
-                        print("Screen dismissed")
-                    }, content: {
+                    .sheet(isPresented: $viewModel.isShowingAddItemScreen, content: {
                         AddItemScreen(listItems: $viewModel.listItems)
                     })
                 }
