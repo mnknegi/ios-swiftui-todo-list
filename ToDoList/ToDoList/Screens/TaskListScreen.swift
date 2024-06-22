@@ -17,9 +17,7 @@ struct TaskListScreen: View {
 
         ZStack {
             List {
-                ToDoTasksSection(tasks: $viewModel.tasks,
-                                 isEditingEnabled: $viewModel.isEditingEnabled,
-                                 editedTaskTitle: $viewModel.editedTaskTitle)
+                ToDoTasksSection(tasks: $viewModel.tasks)
 
                 CompletedTasksSection(tasks: $viewModel.tasks)
             }

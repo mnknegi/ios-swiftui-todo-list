@@ -30,6 +30,7 @@ struct AddItemScreen: View {
                         listItems.append(Item(title: viewModel.title, count: nil, color: viewModel.selectedColor))
                         dismiss()
                     }
+                    .disabled(viewModel.title.isEmpty)
                 }
                 
                 ToolbarItem(id: viewModel.navBarCancelButton, placement: .topBarLeading) {

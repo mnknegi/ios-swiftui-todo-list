@@ -43,6 +43,7 @@ struct AddTaskScreen: View {
                         }
                         dismiss()
                     }
+                    .disabled(viewModel.activityTitle.isEmpty)
                 }
                 
                 ToolbarItem(id: viewModel.navBarCancelButton, placement: .topBarLeading) {

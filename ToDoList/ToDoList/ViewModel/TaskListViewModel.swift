@@ -13,7 +13,5 @@ final class TaskListViewModel {
 
     var tasks = mockTasks
     var isShowingAddTaskScreen = false
-    var isEditingEnabled = false
-    var editedTaskTitle = ""
     
 }
